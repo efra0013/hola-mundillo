@@ -1,2 +1,4 @@
 Este es mi primer archivo .txt.
 Se ve chido no?
+Ahora estoy copiando la cuestión, quiero ver si puedo cambiar el git, en realidad cómo hacerlo.
+Lo que quiero es aprender
