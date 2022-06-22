@@ -1,0 +1,30 @@
+Algoritmo sin_titulo
+	
+	Definir palabra, vector, letra Como Caracter
+	Definir i, posicion Como Entero
+	
+	Escribir "Escriba la palabra o frase para ingresar al vector"
+	Leer palabra
+	
+	Dimension vector[20]
+	
+	Para i=0 Hasta 19 Con Paso 1 Hacer
+		vector[i] = Subcadena(palabra,i,i)
+	FinPara
+	
+	Escribir "Ingrese un caracter a ingresar en el vector"
+	Leer letra
+	Escribir "Ingrese la posición que desea ingresar el caracter"
+	Leer posicion
+	
+	Si vector[posicion] = " " Entonces
+		vector[posicion] = letra
+		Para i=0 Hasta 19 Con Paso 1 Hacer
+			Escribir Sin Saltar vector[i]
+		FinPara
+		Escribir "Oo"
+	SiNo
+		Escribir "Esta posición está ocupada"
+	FinSi
+	
+FinAlgoritmo

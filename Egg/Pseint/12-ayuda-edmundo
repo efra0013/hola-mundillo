@@ -1,0 +1,32 @@
+Algoritmo sin_titulo
+	//Rellenar una matriz, de 3 x 3, con una palabra de 9 de longitud, pedida por el usuario,
+	//encontrando la manera de que la frase se muestre de manera continua en la matriz.
+	
+	definir matriz,palabra Como Caracter
+	definir i,j como entero
+	dimension matriz(3,3)
+	escribir sin saltar "Escribir una palabra de 9 letras: "; leer palabra
+	
+	para i=0 hasta 2 con paso 1 Hacer
+		para j=0 hasta 2 Hacer
+			si i==0 Entonces
+				matriz[i,j] = subcadena(palabra,j,j)
+			SiNo si i==1 Entonces
+					matriz[i,j] = subcadena(palabra,j+3,j+3)
+				SiNo si i==2 Entonces
+						matriz[i,j] = subcadena(palabra,j+6,j+6)
+					FinSi
+				FinSi
+			FinSi
+		FinPara
+	FinPara
+	para i=0 hasta 2 Hacer
+		para j=0 hasta 2 Hacer
+			escribir sin saltar " [ " matriz[i,j] " ] "
+		FinPara
+		Escribir " "
+	FinPara
+FinAlgoritmo
+
+
+

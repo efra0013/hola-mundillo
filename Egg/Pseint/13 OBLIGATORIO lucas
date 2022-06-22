@@ -1,0 +1,84 @@
+Algoritmo sin_titulo
+	definir matriz,filas,columnas,i,j,sumafilas,sumacols,sumadiags,sumadiags1,s Como Entero
+	sumafilas=0
+	sumacols=0
+	sumadiags=0
+	sumadiags1=0
+	escribir "ingrese filas y columnas de la matriz"
+	leer filas,columnas
+	Dimension matriz(filas,columnas)
+	escribir "ingresar los numeros de la matriz"
+	para i<-0 hasta filas-1 Hacer
+		para j<-0 hasta columnas-1 hacer
+			leer matriz(i,j)
+		FinPara
+	FinPara
+	para i<-0 hasta filas-1 Hacer
+		
+		para j<-0 hasta columnas-1 Hacer
+			escribir Sin Saltar "[" matriz(i,j) "]" " "
+		FinPara
+		escribir ""
+	FinPara
+	escribir  "SUMA FILAS"
+	para i<-0 hasta filas-1 hacer
+		sumafilas=0
+		para j<-0 hasta columnas-1 Hacer
+			sumafilas=sumafilas+matriz(i,j)
+		FinPara
+		escribir sumafilas
+		si i>=1 Entonces
+			si s<>sumafilas Entonces
+				i=filas+1
+				escribir "la matriz no es magica"
+			FinSi
+		FinSi
+		s=sumafilas
+	FinPara
+	escribir "SUMA COLUMNAS"
+	para j<-0 hasta columnas-1 Hacer
+		sumacols=0
+		para i<-0 hasta filas-1 hacer
+			sumacols=sumacols+matriz(i,j)
+		FinPara
+		escribir sumacols
+		si i>=1 Entonces
+			si s<>sumacols Entonces
+				j=columnas+1
+				escribir "la matriz no es magica"
+			FinSi
+		FinSi
+		s=sumacols
+	FinPara
+	escribir "SUMA DIAGONAL 1"
+	para i<-0 hasta filas-1 hacer
+		para i<-0 hasta filas-1 hacer
+			sumadiags=sumadiags+matriz(i,i)
+		FinPara
+		escribir sumadiags
+		si i>=1 Entonces
+			si s<>sumadiags Entonces
+				i=filas+1
+				escribir "la matriz no es magica"
+			FinSi
+		FinSi
+		s=sumadiags
+	FinPara
+	escribir "SUMA DIAGONAL 2"
+	para j=filas-1 hasta 0 con paso -1 hacer
+		para j=filas-1 hasta 0 con paso -1 Hacer
+			sumadiags1=sumadiags1+matriz(j,j)
+		FinPara
+		escribir sumadiags1
+		si i>=1 entonces
+			si s<>sumadiags1 Entonces
+				j=filas+1
+				escribir "la matriz no es magica"
+			FinSi
+		FinSi
+		s=sumadiags1
+	FinPara
+	si sumacols=sumafilas y sumafilas=sumadiags y sumadiags=sumadiags1 Entonces
+		escribir "la matriz es magica"
+	FinSi
+FinAlgoritmo
